@@ -1,0 +1,66 @@
+WWW-Zooomr-Scraper version 0.3.0
+
+SYNOPSIS
+
+   use WWW::Zooomr::Scraper;
+
+   my $zooomr = WWW::Zooomr::Scraper->new();
+
+   eval {
+      $zooomr->login(username => ’polettix’, password => ’whatever’);
+      my $photo_uri = $zooomr->upload(filename => ’/path/to/file.jpg’);
+      print {*STDOUT} "URI: $photo_uri\n";
+      $zooomr->logout();
+   } or warn "error uploading: $@";
+
+DESCRIPTION
+This module allows uploading photos to Zooomr
+(<http://www.zooomr.com/>) programatically through the website interface,
+i.e. through the same upload facility that can be used from the browser.
+
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+Alternatively, to install with Module::Build, you can use the following commands:
+
+	perl Build.PL
+	./Build
+	./Build test
+	./Build install
+
+TESTING
+
+If you really want to test this module a bit, you should provide your
+credentials to access Zooomr. To do this, you can either create a file
+t/credentials like this (note: no spaces before the keys):
+
+   username = <your-username>
+   password = <your-password>
+
+or pass them as environment variables ZOOOMR_USERNAME and ZOOOMR_PASSWORD:
+
+   shell$ ZOOOMR_USERNAME=polettix ZOOOMR_PASSWORD=whatever ./Build test
+
+DEPENDENCIES
+
+* version
+* WWW::Mechanize
+* Path::Class
+
+Additionally, the function "load_cookies_from" depends upon
+"HTTP::Cookies::Mozilla".
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2010, Flavio Poletti
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl 5.8.8 itself.

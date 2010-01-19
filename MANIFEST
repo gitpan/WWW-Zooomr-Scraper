@@ -1,0 +1,11 @@
+Build.PL
+Changes
+MANIFEST
+Makefile.PL
+README
+lib/WWW/Zooomr/Scraper.pm
+t/00.load.t
+t/01.upload.t
+t/pod-coverage.t
+t/pod.t
+META.yml
