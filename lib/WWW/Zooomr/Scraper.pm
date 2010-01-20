@@ -2,7 +2,7 @@ package WWW::Zooomr::Scraper;
 use strict;
 use warnings;
 use Carp;
-use version; our $VERSION = qv('0.3.0');
+use version; our $VERSION = qv('0.3.1');
 use English qw( -no_match_vars );
 use WWW::Mechanize;
 
